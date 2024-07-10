@@ -30,6 +30,10 @@ If you have completed this activity, work through the following challenge with y
 
 * Even when an event is canceled, it continues to propagate. What does that mean?
 
+*Event propagation is a way to describe the “stack” of events that are fired in a web browser. 
+
+*The e.stopPropagation() halts this “bubbling” of events “up” through the DOM.
+
 Use [Google](https://www.google.com) or another search engine to research this.
 
 ---

@@ -28,6 +28,12 @@ If you have completed this activity, work through the following challenge with y
 
 * A click is just one type of DOM event. What are some others?
 
+mouse events (MouseEvent): mousedown, mouseup, click, dblclick, mousemove, mouseover, mousewheel, mouseout, contextmenu
+touch events (TouchEvent): touchstart, touchmove, touchend, touchcancel
+keyboard events (KeyboardEvent): keydown, keypress, keyup
+form events: focus, blur, change, submit
+window events: scroll, resize, hashchange, load, unload
+
 Use [Google](https://www.google.com) or another search engine to research this.
 
 ---
