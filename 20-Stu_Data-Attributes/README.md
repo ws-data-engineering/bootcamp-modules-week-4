@@ -28,6 +28,11 @@ If you have completed this activity, work through the following challenge with y
 
 * We have learned `getAttribute()` and `setAttribute()`. What other methods can you use to access an element's attributes?
 
+elem.hasAttribute(name) – checks for existence.
+elem.getAttribute(name) – gets the value.
+elem.setAttribute(name, value) – sets the value.
+elem.removeAttribute(name) – removes the attribute.
+
 Use [Google](https://www.google.com) or another search engine to research this.
 
 ---
