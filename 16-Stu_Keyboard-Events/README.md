@@ -38,6 +38,10 @@ If you have completed this activity, work through the following challenge with y
 
 * What other properties can you access using the `KeyboardEvent` object?
 
+onkeydown: This event is triggered when the user is pressing a key.
+onkeypress: This event is triggered when the user presses a key.
+onkeyup: This event is triggered when the user releases a key.
+
 Use [Google](https://www.google.com) or another search engine to research this.
 
 ---

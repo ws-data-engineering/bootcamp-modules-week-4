@@ -1,6 +1,10 @@
 // TODO: Which element is the following line of code selecting?
+// The element is selecting a <div> that contains the images for the slideshow.
+
 const carousel = document.querySelector('.carouselbox');
+
 // TODO: Which element is the following line of code selecting?
+// The line of code below is selecting the 'Next' button.
 const next = carousel.querySelector('.next');
 const prev = carousel.querySelector('.prev');
 let index = 0;
@@ -27,21 +31,27 @@ function navigate(direction) {
 }
 
 // TODO: Describe the functionality of the following event listener.
+// When the image is clicked the most current facing image is placed in a modal window with a black background.
 carousel.addEventListener('click', function () {
   window.location.href = images[index];
 });
 
 // TODO: Describe the functionality of the following event listener.
+//The event listener is waiting for the 'next' button to be clicked to advance to the next slide.
 next.addEventListener('click', function (event) {
   // TODO: What is the purpose of the following line of code?
+  // The stop propagation method is used to only fire the current event. Without this method, both the slide would advance and then the modal window would appear. 
   event.stopPropagation();
 
   navigate(1);
 });
 
 // TODO: Describe the functionality of the following event listener.
+//The event listener is waiting for the 'prev' button to be clicked to advance to the previous slide.
+
 prev.addEventListener('click', function (event) {
   // TODO: What would happen if we didn't add the following line of code?
+  // the stop propagation method is used to only fire the current event. Without this method, both the slide would advance and then the modal window would appear. 
   event.stopPropagation();
 
   navigate(-1);

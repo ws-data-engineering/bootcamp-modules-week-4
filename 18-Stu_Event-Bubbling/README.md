@@ -18,6 +18,12 @@ If you have completed this activity, work through the following challenge with y
 
 * What is event delegation? How is it different from event bubbling?
 
+- Event Bubbling : Event Bubbling is a concept in the DOM (Document Object Model). It refers to this scenario: an element receives an event, and this event bubbles up to its parent and ancestor elements in the DOM tree until it reaches the root element.
+
+- Stop propagation stops event bubbling.
+
+- Event Delegation : Event delegation is a pattern based upon Event Bubbling. With this pattern, instead of adding event listeners to every child element, you only need to bind the event listener to the parent element.
+
 Use [Google](https://www.google.com) or another search engine to research this.
 
 ---
