@@ -2,7 +2,7 @@ const container = document.querySelector('.container');
 
 
 function showDefaultNumbers() {
-  for(let num = 0; num < container.children.length; num += 2) {
+  for (let num = 0; num < container.children.length; num += 2) {
     container.children[num].innerHTML = `${num + 1}`;
   };
 };
