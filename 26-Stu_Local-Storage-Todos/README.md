@@ -16,6 +16,8 @@ If you have completed this activity, work through the following challenge with y
 
 * What is `sessionStorage`? How is it different from `localStorage`?  
 
+Local storage object - Stores data with no expiration date. Session storage object - Stores data for one session (data is lost when the browser tab is closed)
+
 Use [Google](https://www.google.com) or another search engine to research this.
 
 ---
