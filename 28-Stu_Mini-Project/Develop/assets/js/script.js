@@ -12,21 +12,24 @@ let tempStorageObject = {
   text: [],
 };
 
-// ? We neet to keep track of the current element that is being dragged
+// ? We need to keep track of the current element that is being dragged
 let currentElement = null;
 
 clearBtn.addEventListener('click', function () {
   // TODO: Clear the local storage and refresh the page
+  localStorage.clear();
+  location.reload();
 });
 
 function updateLocalStorage() {
   // TODO: Update the local storage with the tempStorageObject
+  localStorage.setItem('tempStorageObject', JSON.stringify(tempStorageObject)); 
 }
 
 // ? Function to load from local storage. This function will be called on page load.
 function loadFromLocalStorage() {
   // TODO: Load and parse the data from local storage and paint the images and text on the mood board
-
+  const storedData = JSON.parse(localStorage.getItem('tempStorageObject')); 
   if (storedData) {
     tempStorageObject = storedData;
 
@@ -41,6 +44,15 @@ function loadFromLocalStorage() {
     });
 
     // TODO: Paint the stored text to the mood board
+    const ul = document.createElement('ul');
+    ul.setAttribute('style', 'list-style-type: none;');
+    moodBoardEl.appendChild(ul);
+
+    for (let i = 0; i < storedData['text'].length; i++) {
+      const li = document.createElement('li');
+      li.textContent = JSON.stringify(storedData['text'][i]['text']);
+      ul.appendChild(li);
+    }
   }
 }
 
@@ -49,9 +61,13 @@ addImageBtn.addEventListener('click', function () {
   const imageUrl = imageUrlInput.value;
   if (imageUrl) {
     // TODO: Create an image element, add a class of draggable, set the src attribute to the image URL provided by the user, and append it to the body element
-
+    const image = document.createElement('img');
+    const moodBody = document.querySelector('body');
+    image.setAttribute('class', 'draggable');
+    image.setAttribute('src', imageUrl);
+    moodBody.appendChild(image);
     // TODO: Set the `currentElement` to the image element you create.
-
+    currentElement = image;
     // ? We attach the mouse move event listener to the document and the mood board div so that the element can be dragged anywhere on the screen and dropped only on the mood board div.
     attachMouseListeners();
   }
@@ -76,6 +92,8 @@ addTextBtn.addEventListener('click', function () {
 
 function attachMouseListeners() {
   // TODO: Attach the mouse move event listener to the document and the click listener to the mood board div so that the element can be dragged anywhere on the screen, but dropped only on the mood board div.
+  document.addEventListener('mousemove', mouseMoveHandler);
+  moodBoardEl.addEventListener('click', placeElementClickHandler); 
 }
 
 // ? This is the event handler for the mouse move event. This will be called whenever the mouse is moved on the screen.
